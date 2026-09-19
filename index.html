@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlyTrack — Live Air Traffic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="map"></div>
+
+  <aside id="panel">
+    <header class="panel-header">
+      <div class="brand">
+        <span class="brand-icon">✈</span>
+        <div>
+          <h1>FlyTrack</h1>
+          <p class="brand-sub">Live air traffic tracking</p>
+        </div>
+      </div>
+      <div id="status" class="status">
+        <span class="dot"></span>
+        <span id="status-text">Connecting…</span>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="stat">
+        <span id="stat-total">0</span>
+        <label>Tracked</label>
+      </div>
+      <div class="stat">
+        <span id="stat-air">0</span>
+        <label>In air</label>
+      </div>
+      <div class="stat">
+        <span id="stat-ground">0</span>
+        <label>On ground</label>
+      </div>
+    </section>
+
+    <section class="refresh-row">
+      <span id="refresh-text">Refreshing in —</span>
+      <div class="refresh-bar"><div id="refresh-fill"></div></div>
+      <button id="refresh-btn" title="Refresh now">⟳</button>
+    </section>
+
+    <section class="controls">
+      <input id="search" type="text" placeholder="Search callsign…" autocomplete="off" />
+      <select id="filter">
+        <option value="all">All flights</option>
+        <option value="air">In air only</option>
+        <option value="ground">On ground only</option>
+      </select>
+      <select id="country">
+        <option value="">All countries</option>
+      </select>
+    </section>
+
+    <section class="flights-header">
+      <span id="list-count">0 flights</span>
+      <span class="hint">click a flight to follow it</span>
+    </section>
+
+    <div id="flights" class="flights"></div>
+
+    <div id="detail" class="detail hidden">
+      <div class="detail-handle">Selected flight</div>
+      <button id="detail-close" title="Close">×</button>
+      <dl>
+        <div><dt>Callsign</dt><dd id="d-callsign">—</dd></div>
+        <div><dt>Aircraft</dt><dd id="d-icao">—</dd></div>
+        <div><dt>Origin</dt><dd id="d-origin">—</dd></div>
+        <div><dt>Altitude</dt><dd id="d-alt">—</dd></div>
+        <div><dt>Speed</dt><dd id="d-speed">—</dd></div>
+        <div><dt>Heading</dt><dd id="d-heading">—</dd></div>
+        <div><dt>V/S</dt><dd id="d-vs">—</dd></div>
+        <div><dt>Status</dt><dd id="d-status">—</dd></div>
+        <div><dt>Squawk</dt><dd id="d-squawk">—</dd></div>
+      </dl>
+    </div>
+  </aside>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="icao-countries.js"></script>
+  <script src="countries.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
