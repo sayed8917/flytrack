@@ -1,0 +1,10 @@
+{
+  "name": "fly-tracking",
+  "version": "1.0.0",
+  "description": "FlyTrack — live air traffic tracking with OpenSky, VATSIM, and Leaflet",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "python server.py"
+  }
+}
