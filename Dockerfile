@@ -5,6 +5,6 @@ WORKDIR /app
 COPY server.py .
 COPY index.html style.css app.js icao-countries.js countries.js ./
 
-EXPOSE 8080
+EXPOSE 8000
 
 CMD ["python", "server.py"]

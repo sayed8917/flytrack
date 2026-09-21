@@ -23,7 +23,7 @@ Realtime flight tracking website built with **OpenSky Network**, **VATSIM**, and
 python server.py
 ```
 
-Then open <http://localhost:8080>.
+Then open <http://localhost:8000>.
 
 > Use `server.py` (not `python -m http.server`): it serves the site **and** proxies the OpenSky API so browser requests aren't blocked by CORS.
 
